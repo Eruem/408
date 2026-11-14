@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "运行当前 C 文件",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${fileDirname}\\.cbuild\\${fileBasenameNoExtension}.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "console": "integratedTerminal",
+      "preLaunchTask": "build C file (MSVC)"
+    }
+  ]
+}

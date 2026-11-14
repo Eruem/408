@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build C file (MSVC)",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "\"${workspaceFolder}\\.vscode\\build-c.cmd\" \"${file}\""
+      ],
+      "options": {
+        "cwd": "${fileDirname}",
+        "env": {
+          "VSCMD_SKIP_SENDTELEMETRY": "1"
+        }
+      },
+      "problemMatcher": ["$msCompile"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "run C file (MSVC)",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "\"${workspaceFolder}\\.vscode\\run-c.cmd\" \"${file}\""
+      ],
+      "options": {
+        "cwd": "${fileDirname}",
+        "env": {
+          "VSCMD_SKIP_SENDTELEMETRY": "1"
+        }
+      },
+      "problemMatcher": ["$msCompile"],
+      "group": "none",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    }
+  ]
+}
