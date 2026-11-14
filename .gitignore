@@ -1,0 +1,23 @@
+# Build outputs
+*.exe
+*.o
+*.obj
+*.out
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+.cbuild/
+build/
+Debug/
+Release/
+*.pdb
+*.ilk
+*.idb
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
