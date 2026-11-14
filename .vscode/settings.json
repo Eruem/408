@@ -15,7 +15,8 @@
   "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
   "C_Cpp.default.compilerArgs": [
     "/EHsc",
-    "/nologo"
+    "/nologo",
+    "/utf-8"
   ],
   "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,

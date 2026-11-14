@@ -22,10 +22,13 @@ set "NAME=%~n1"
 cd /d "%DIR%" || exit /b 1
 
 if not exist ".cbuild" mkdir ".cbuild"
-cl.exe /nologo /EHsc /Fe:".cbuild\%NAME%.exe" /Fo".cbuild\\" "%SRC%"
+rem /utf-8: source + string literals both UTF-8 (fixes C4819 and Chinese printf)
+cl.exe /nologo /EHsc /utf-8 /Fe:".cbuild\%NAME%.exe" /Fo".cbuild\\" "%SRC%"
 if errorlevel 1 exit /b 1
 
 del /q ".cbuild\*.obj" 2>nul
 echo.
+rem VS Code / modern terminals use UTF-8; match console to exe strings
+chcp 65001 >nul
 ".cbuild\%NAME%.exe"
 exit /b %ERRORLEVEL%

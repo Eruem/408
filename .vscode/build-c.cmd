@@ -22,7 +22,7 @@ set "NAME=%~n1"
 cd /d "%DIR%" || exit /b 1
 
 if not exist ".cbuild" mkdir ".cbuild"
-cl.exe /nologo /EHsc /Fe:".cbuild\%NAME%.exe" /Fo".cbuild\\" "%SRC%"
+cl.exe /nologo /EHsc /utf-8 /Fe:".cbuild\%NAME%.exe" /Fo".cbuild\\" "%SRC%"
 if errorlevel 1 exit /b 1
 
 del /q ".cbuild\*.obj" 2>nul
